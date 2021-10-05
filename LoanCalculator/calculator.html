@@ -6,6 +6,45 @@
         <script src="calculator-functionality.js"></script>
     </head>
     <body>
-        Place Holder Name
+        <!--User Input area-->
+        <div class="loan-element-container">
+            <div>
+                <label for="loan-amount">Loan Amount:</label>
+                <input type="number" id="loan-amount" name="loan-amount" min="0" max="100000" value="0">
+            </div>
+            <div>
+                <label for="deposit-amount">Deposit Amount:</label>
+                <input type="number" id="deposit-amount" name="deposit-amount" min="0" max="100000">
+            </div>
+            <div>
+                <label for="ppf">PPF:</label>
+                <input type="number" id="ppf" name="ppf" min="0" max="100000">
+            </div>
+            <div>
+                Installments:
+                <div class="installments-slider-container">
+                    <input type="range" min="1" max="100" value="50" class="installments-slider" id="installment-range">
+                </div>
+            </div>
+            <div>
+                <label class="biweekly-switch">
+                    Bi-Monthly:
+                    <input type="checkbox">
+                    <span class="biweekly-slider"></span>
+                </label>
+            </div>
+        </div>
+        <!--Display input -->
+        <div class="display-all-values">
+            Current Values
+            <p>Loan Amount: <span id="display-loan-amount"></span></p>
+            <p>Deposit Amount: <span id="display-deposit-amount"></span></p>
+            <p>PPF Amount: <span id="display-ppf-amount"></span></p>
+            <p>Installments Amount: <span id="display-installments-amount"></span></p>
+            <p>Installment Type: <span id="display-installment-type"></span></p>
+        </div>
+        <!--Submit input for calculation-->
+        <div>
+        </div>
     </body>
 </html>

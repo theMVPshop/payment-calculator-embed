@@ -1,0 +1,82 @@
+/*Loan Calculator Container*/
+.loan-element-container
+{
+    padding-top: 5%;
+    font-size: x-large;
+    text-align: center;
+}
+
+/*Installment slider*/
+.installments-slider-container
+{
+    width: 100%;
+}
+
+.installments-slider
+{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 50%;
+    height: 10%;
+    /*Rounded Slider*/
+    border-radius: 5%;
+    background-color: rgba(168, 168, 168, 0.685);
+    outline: none;
+    opacity: 0.6;
+    transition: 0.2s;
+}
+.installments-slider:hover
+{
+    opacity: 1;
+}
+
+/*Bi-weekly slider*/
+/*
+.biweekly-switch
+{
+    position: relative;
+    display: inline-block;
+    width: 4%;
+    height: 10%;
+}
+.biweekly-switch input
+{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.biweekly-slider
+{
+    border-radius:100%;
+
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: cadetblue;
+    transition: 0.4s;
+}
+.biweekly-slider:before
+{
+    border-radius: 100%;
+
+    position: absolute;
+    content: "";
+    height: 56%;
+    width: 25%;
+    left: 8%;
+    bottom: 20%;
+    background-color: white;
+    transition: 0.4s;
+}
+*/
+
+.display-all-values
+{
+    padding-top: 2%;
+    padding-right: 5%;
+    text-align: center;
+}
+
