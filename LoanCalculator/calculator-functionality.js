@@ -17,14 +17,6 @@ depositAmount.oninput = function () {
     depositDisplay.innerHTML = "$" + this.value;
 }
 
-//Display PPF Amount
-var ppfAmount = document.getElementById("ppf-amount");
-var ppfDisplay = document.getElementById("display-ppf-amount");
-ppfDisplay.innerHTML = "$" + ppfAmount.value;
-
-ppfAmount.oninput = function () {
-    ppfDisplay.innerHTML = "$" + this.value;
-}
 
 //Display current Installment Number
 var installmentSlider = document.getElementById("installment-range");
@@ -32,6 +24,7 @@ var installmentDisplay = document.getElementById("display-installments-amount");
 installmentDisplay.innerHTML = installmentSlider.value;
 
 installmentSlider.oninput = function () {
+
     installmentDisplay.innerHTML = this.value;
 }
 
@@ -54,10 +47,18 @@ bimonthlySwitch.oninput = function () {
 //Formula: (tuition + PPF) - deposit / installments
 //if deposit amount < 2490, ppf = 790
 
-var totalPerInstallmentAmount;
+//PPF Deposit limit. Used to determine when the ppf amount should be added to the formula
+//Depends on deposit amount
+var ppfDepositLimit = 2490;
+//Amount to add to PPF amount
+var ppfAddition = 790;
+//PPF Amount
+var ppfAmount = 0;
+//Storage var
+var totalPerInstallmentAmount = 0;
 
 //Display variables
-//Installment amount 
+//Installment amount
 var calcInstallmentsDisplay = document.getElementById("display-calculated-amount-installments");
 //Money amount
 var calcInstallmentsAmountDisplay = document.getElementById("display-calculated-amount-perinstallments");
@@ -71,7 +72,7 @@ function calculateButton() {
     if (bimonthlySwitch.checked) {
 
         totalPerInstallmentAmount =
-            ((parseFloat(loanAmount.value) + parseFloat(ppfAmount.value)) - parseFloat(depositAmount.value)) / parseFloat(installmentSlider.value * 2);
+            ((parseFloat(loanAmount.value) + ppfAmount) - parseFloat(depositAmount.value)) / parseFloat(installmentSlider.value * 2);
         calcInstallmentsAmountDisplay.innerHTML =  "$" + totalPerInstallmentAmount;
 
         calcInstallmentsDisplay.innerHTML = parseFloat(installmentSlider.value * 2);
@@ -82,7 +83,7 @@ function calculateButton() {
     //if payments are monthly
     else {
         totalPerInstallmentAmount =
-            (parseFloat(loanAmount.value) + parseFloat(ppfAmount.value) - parseFloat(depositAmount.value)) / (parseFloat(installmentSlider.value))
+            (parseFloat(loanAmount.value) + ppfAmount - parseFloat(depositAmount.value)) / (parseFloat(installmentSlider.value));
         calcInstallmentsAmountDisplay.innerHTML = "$" + totalPerInstallmentAmount;
 
         calcInstallmentsDisplay.innerHTML = parseFloat(installmentSlider.value);
@@ -92,9 +93,9 @@ function calculateButton() {
     }
 
     //Calculate PPF WIP
-    if (totalPerInstallmentAmount < 2490)
+    if (totalPerInstallmentAmount < ppfDepositLimit)
     {
-        calcPPF.innerHTML = "$" + 790;
+        calcPPF.innerHTML = "$" + ppfAddition;
     }
     else
     {

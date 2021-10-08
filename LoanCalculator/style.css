@@ -1,14 +1,27 @@
 .calculator-body
 {
-    background-color: grey;
+    padding-top: 10%;
+
+    background-color: rgb(59, 59, 59);
 }
 
 /*Loan Calculator Container*/
-.loan-element-container
+.loan-userinput-container
 {
+
+    width: 40%;
     padding-top: 5%;
     font-size: x-large;
     text-align: center;
+}
+
+/*Displayed and calculated container*/
+.display-all-values{
+
+
+    width: 60%;
+    margin-top: -14%;
+    margin-left: 40%;
 }
 
 /*Installment slider*/
@@ -80,13 +93,16 @@
 
 /* Display values and calculated values*/
 
+
+
 .display-user-values{
-    padding-right: 15%;
+    margin-top: 5%;
+    padding-right: 80%;
     text-align: center;
 }
 
 .display-calculated-values{
-    margin-top: -10%;
+    margin-top: -16%;
     padding-left: 15%;
     text-align: center;
 }

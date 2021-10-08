@@ -9,31 +9,29 @@
 
 <body class="calculator-body">
     <!--User Input area-->
-    <div class="loan-element-container">
+    <div class="loan-userinput-container">
         <div>
             <label for="loan-amount">Loan Amount:</label>
-            <input type="number" id="loan-amount" name="loan-amount" min="0" max="100000" value="0">
+            <input type="range" class="installments-slider" id="loan-amount" name="loan-amount" min="0" max="15000" value="0">
         </div>
         <div>
             <label for="deposit-amount">Deposit Amount:</label>
-            <input type="number" id="deposit-amount" name="deposit-amount" min="0" max="100000" value="0">
+            <input type="range" class="installments-slider" id="deposit-amount" name="deposit-amount" min="0" max="15000" value="0">
         </div>
 
-        <!--Minimum to be paid to start class-->
+        <!--Minimum to be paid to start class Determined by ...-->
         <div>
-            <label for="owedToStart">Amount due before start</label>
-            <input type="number" id="owedToStart" name="owedToStart" min="0" max="100000" value="0">
+            <label for="owedToStart"></label>
+            <label type="number" id="owedToStart" name="owedToStart" min="0" max="100000" value="0">
         </div>
+        
         <div>
-            <label for="ppf-amount">PPF:</label>
-            <input type="number" id="ppf-amount" name="ppf-amount" min="0" max="100000" value="0">
-        </div>
-        <div>
-            |Installments|
             <div class="installments-slider-container">
-                <input type="range" min="1" max="100" class="installments-slider" id="installment-range" value="1">
+                <label for="installment-range">Installments:</label>
+                <input type="range" min="1" max="30" class="installments-slider" id="installment-range" value="1">
             </div>
         </div>
+
         <div>
             <label class="bimonthly-switch-container">
                 Bi-Monthly:
@@ -48,7 +46,7 @@
             Current Values
             <p>Loan Amount: <span id="display-loan-amount"></span></p>
             <p>Deposit Amount: <span id="display-deposit-amount"></span></p>
-            <p>PPF Amount: <span id="display-ppf-amount"></span></p>
+            <p><span id="display-ppf-amount"></span></p>
             <p>Installments Amount: <span id="display-installments-amount"></span></p>
             <p>Installment Type: <span id="display-installment-type"></span></p>
         </div>
