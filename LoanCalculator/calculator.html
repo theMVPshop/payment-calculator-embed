@@ -7,64 +7,33 @@
 
 </head>
 
-<body class="calculator-body">
-    <!--User Input area-->
-    <div class="loan-userinput-container">
-        <div>
-            <label for="loan-amount">Loan Amount:</label>
-            <input type="range" class="installments-slider" id="loan-amount" name="loan-amount" min="0" max="15000" value="0">
-        </div>
-        <div>
-            <label for="deposit-amount">Deposit Amount:</label>
-            <input type="range" class="installments-slider" id="deposit-amount" name="deposit-amount" min="0" max="15000" value="0">
+<body class="main-body">
+    <div class="calc-body">
+        <!--User Input area-->
+        <div class="main-calc-title">Payment Calculator</div>
+
+        <div class="program-length">Length of Program: <span id="inner-program-length" class="inner-program-length"></span></div>
+        <div class="cost-of-program">Cost of Program: <span id="inner-cost-of-program" class="inner-cost-of-program"></span></div>
+
+        <div class="user-input-areas">
+            <div class="down-payment">Down-payment You Can Afford: <input type="number" id="down-payment-box"
+                 class="down-payment-box" min="0" max="0"> <input type="range" id="down-payment-slider" class="slider-bars" min="0" max="20000"></div>
+            <div class="monthly-payment">Monthly Amount You Can Afford: <input type="number" id="monthly-payment-box" 
+                 class="monthly-payment-box"><input type="range" id="monthly-payment-slider" class="slider-bars" min="0" max="20000"></div>
         </div>
 
-        <!--Minimum to be paid to start class Determined by ...-->
-        <div>
-            <label for="owedToStart"></label>
-            <label type="number" id="owedToStart" name="owedToStart" min="0" max="100000" value="0">
-        </div>
-        
-        <div>
-            <div class="installments-slider-container">
-                <label for="installment-range">Installments:</label>
-                <input type="range" min="1" max="30" class="installments-slider" id="installment-range" value="1">
+        <div class="payment-recap">
+            <div>
+                It will take you <span id="months-to-pay" class="months-to-pay">TestTestTest</span> to pay off the
+                program, and if you start paying today, you can
+                begin attending classes as early as <span id="earliest-start-date" class="earliest-start-date">TestTestTest</span>
+                and finish the program in <span id="earliest-end-date" class="earliest-end-date">TestTestTest</span>
             </div>
         </div>
 
-        <div>
-            <label class="bimonthly-switch-container">
-                Bi-Monthly:
-                <input type="checkbox" id="bimonthly-switch" name="bimonthly-switch">
-                <span class="bimonthly-slider"></span>
-            </label>
-        </div>
-    </div>
-    <!--Display Input-->
-    <div class="display-all-values">
-        <div class="display-user-values">
-            Current Values
-            <p>Loan Amount: <span id="display-loan-amount"></span></p>
-            <p>Deposit Amount: <span id="display-deposit-amount"></span></p>
-            <p><span id="display-ppf-amount"></span></p>
-            <p>Installments Amount: <span id="display-installments-amount"></span></p>
-            <p>Installment Type: <span id="display-installment-type"></span></p>
-        </div>
-        <div class="display-calculated-values">
-            Calculated Information
-            <p>Number of <span id="display-installment-type"></span> Installments: <span id="display-calculated-amount-installments"></span></p>
-            <p>Amount per Installment: <span id="display-calculated-amount-perinstallments" ></span></p>
-            <p>PPF: <span id="display-calculated-installments"></span></p>
-            <p>Required Amount of Payments to Start: <span id="display-calculated-payments-perinstallments"></span></p>
-            <p>Last Payment Month: <span id="display-calculated-lastPaymentMonth"></span></p>
-        </div>
-    </div>
-    <!--Submit input for calculation-->
-    <button class="calculate-button" onclick="calculateButton()">Calculate</button>
-
-    <script src="calculator-functionality.js" type="text/javascript"></script>
-    <div>
+        <script src="calculator-functionality.js" type="text/javascript"></script>
     </div>
 </body>
 
 </html>
+

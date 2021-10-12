@@ -1,105 +1,52 @@
+var tuition;
+var ppf;
+//Used for user affordable payment amount
+var deposit;
+var depositMax;
+var depositMin;
+//Used for user affordable monthly payment amount
+var monthlyAmount;
+var monthlyAmountMax;
+var monthlyAmountMin;
 
-//Display current Loan Amount
-var loanAmount = document.getElementById("loan-amount");
-var loanDisplay = document.getElementById("display-loan-amount");
-loanDisplay.innerHTML = "$" + loanAmount.value;
+var programLength;
+var programCost;
+//DOM
 
-loanAmount.oninput = function () {
-    loanDisplay.innerHTML = "$" + this.value;
+var programLengthObject = document.getElementById("inner-program-length");
+var programCostObject = document.getElementById("inner-cost-of-program");
+
+//Input Boxes
+var userDepositBox = document.getElementById("down-payment-box");
+var userMonthlyPaymentsBox = document.getElementById("monthly-payment-box");
+
+//Input Sliders
+var userDepositSlider = document.getElementById("down-payment-slider");
+var userMonthlyPaymentsSlider = document.getElementById("monthly-payment-slider");
+
+var monthsToPay = document.getElementById("months-to-pay");
+var earlyStartDate = document.getElementById("earliest-start-date");
+var earlyEndDate = document.getElementById("earliest-end-date");
+
+//assign hard code values
+programLength = 38;
+programLengthObject.innerHTML = programLength + " Weeks";
+
+programCost = 18500;
+ppf = 750;
+programCostObject.innerHTML ="$" + programCost + " + $" + ppf + "*";
+
+//Put Slider numbers into input boxes, and vice versa
+userDepositSlider.oninput = function(){
+    userDepositBox.value = this.value;
+}
+userDepositBox.oninput = function(){
+    userDepositSlider.value = this.value;
 }
 
-//Display Deposit Amount
-var depositAmount = document.getElementById("deposit-amount");
-var depositDisplay = document.getElementById("display-deposit-amount");
-depositDisplay.innerHTML = "$" + depositAmount.value;
-
-depositAmount.oninput = function () {
-    depositDisplay.innerHTML = "$" + this.value;
+userMonthlyPaymentsSlider.oninput = function(){
+    userMonthlyPaymentsBox = this.value;
 }
-
-
-//Display current Installment Number
-var installmentSlider = document.getElementById("installment-range");
-var installmentDisplay = document.getElementById("display-installments-amount");
-installmentDisplay.innerHTML = installmentSlider.value;
-
-installmentSlider.oninput = function () {
-
-    installmentDisplay.innerHTML = this.value;
+userMonthlyPaymentsBox.oninput = function(){
+    userMonthlyPaymentsSlider = this.value;
 }
-
-//Display bi-monthly status
-var bimonthlySwitch = document.getElementById("bimonthly-switch");
-var bimonthlyDisplay = document.getElementById("display-installment-type");
-bimonthlyDisplay.innerHTML = "Monthly";
-
-bimonthlySwitch.oninput = function () {
-
-    if (bimonthlySwitch.checked) {
-        bimonthlyDisplay.innerHTML = "Bi-Monthly";
-    }
-    else {
-        bimonthlyDisplay.innerHTML = "Monthly";
-    }
-}
-
-//Calculations 
-//Formula: (tuition + PPF) - deposit / installments
-//if deposit amount < 2490, ppf = 790
-
-//PPF Deposit limit. Used to determine when the ppf amount should be added to the formula
-//Depends on deposit amount
-var ppfDepositLimit = 2490;
-//Amount to add to PPF amount
-var ppfAddition = 790;
-//PPF Amount
-var ppfAmount = 0;
-//Storage var
-var totalPerInstallmentAmount = 0;
-
-//Display variables
-//Installment amount
-var calcInstallmentsDisplay = document.getElementById("display-calculated-amount-installments");
-//Money amount
-var calcInstallmentsAmountDisplay = document.getElementById("display-calculated-amount-perinstallments");
-var calcPPF = document.getElementById("display-calculated-installments");
-
-var owedToStart = document.getElementById("owedToStart");
-var calcPaymentsToStartDisplay = document.getElementById("display-calculated-payments-perinstallments");
-
-function calculateButton() {
-    //if the payments are bimonthly
-    if (bimonthlySwitch.checked) {
-
-        totalPerInstallmentAmount =
-            ((parseFloat(loanAmount.value) + ppfAmount) - parseFloat(depositAmount.value)) / parseFloat(installmentSlider.value * 2);
-        calcInstallmentsAmountDisplay.innerHTML =  "$" + totalPerInstallmentAmount;
-
-        calcInstallmentsDisplay.innerHTML = parseFloat(installmentSlider.value * 2);
-
-        //OwedToStart
-        calcPaymentsToStartDisplay.innerHTML = parseFloat(owedToStart.value) / totalPerInstallmentAmount * 2;
-    }
-    //if payments are monthly
-    else {
-        totalPerInstallmentAmount =
-            (parseFloat(loanAmount.value) + ppfAmount - parseFloat(depositAmount.value)) / (parseFloat(installmentSlider.value));
-        calcInstallmentsAmountDisplay.innerHTML = "$" + totalPerInstallmentAmount;
-
-        calcInstallmentsDisplay.innerHTML = parseFloat(installmentSlider.value);
-
-        //OwedToStart
-        calcPaymentsToStartDisplay.innerHTML = parseFloat(owedToStart.value) / totalPerInstallmentAmount;
-    }
-
-    //Calculate PPF WIP
-    if (totalPerInstallmentAmount < ppfDepositLimit)
-    {
-        calcPPF.innerHTML = "$" + ppfAddition;
-    }
-    else
-    {
-        calcPPF.innerHTML = "$" +  0;
-    }
-}
-

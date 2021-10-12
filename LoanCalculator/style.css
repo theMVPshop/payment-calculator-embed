@@ -1,40 +1,73 @@
-.calculator-body
+.main-body
 {
-    padding-top: 10%;
-
-    background-color: rgb(59, 59, 59);
+    background-color: rgb(27, 26, 26);
 }
+.calc-body{
+    margin-top: 10%;
+    padding-left: 0%;
+    width: 50%;
+    margin-left: 25%;
 
-/*Loan Calculator Container*/
-.loan-userinput-container
-{
+    border-style: solid;
+    border-color: rgb(224, 22, 66);
+    background-color: rgb(223, 66, 126);
 
-    width: 40%;
-    padding-top: 5%;
-    font-size: x-large;
     text-align: center;
 }
-
-/*Displayed and calculated container*/
-.display-all-values{
-
-
-    width: 60%;
-    margin-top: -14%;
-    margin-left: 40%;
+.main-calc-title{
+    font-size: 300%;
+    padding-bottom: 2%;
+    color:rgb(0, 0, 0);
 }
 
-/*Installment slider*/
-.installments-slider-container
-{
-    width: 100%;
+/*Descriptive program length and cost of program displays*/
+.program-length{
+    font-size: 150%;
+    margin-left: -15%;
 }
 
-.installments-slider
-{
+.inner-program-length{
+    font-size: 110%;
+    font-weight: bold;
+}
+
+.cost-of-program{
+    font-size: 150%;
+    margin-left: -17.5%;
+}
+
+.inner-cost-of-program{
+    font-size: 110%;
+    font-weight: bold;
+}
+
+/*User input boxes and sliders*/
+.user-input-areas{
+
+    margin-left: 10%;
+    padding-top: 2%;
+    font-size: 100%;
+}
+
+.down-payment{
+    font-size: 140%;
+}
+.down-payment-box{
+    width: 8%;
+}
+
+.monthly-payment{
+    margin-left: -1.2%;
+    font-size: 140%;
+}
+.monthly-payment-box{
+    width: 8%;
+}
+
+.slider-bars{
     -webkit-appearance: none;
     appearance: none;
-    width: 50%;
+    width: 35%;
     height: 10%;
     /*Rounded Slider*/
     border-radius: 5%;
@@ -43,73 +76,27 @@
     opacity: 0.6;
     transition: 0.2s;
 }
-.installments-slider:hover
-{
-    opacity: 1;
+
+/*Payment recap*/
+.payment-recap{
+
+    padding-top: 2%;
+    margin-left: 15%;
+    width: 70%;
+    font-size: 200%;
 }
 
-/*bimonthly slider*/
-/*
-.bimonthly-switch-container
-{
-    position: relative;
-    display: inline-block;
-    width: 4%;
-    height: 10%;
-}
-.bimonthly-switch-container input
-{
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-.bimonthly-slider
-{
-    border-radius:100%;
-
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: cadetblue;
-    transition: 0.4s;
-}
-.bimonthly-slider:before
-{
-    border-radius: 100%;
-
-    position: absolute;
-    content: "";
-    height: 56%;
-    width: 25%;
-    left: 8%;
-    bottom: 20%;
-    background-color: white;
-    transition: 0.4s;
-}
-*/
-
-/* Display values and calculated values*/
-
-
-
-.display-user-values{
-    margin-top: 5%;
-    padding-right: 80%;
-    text-align: center;
+.months-to-pay{
+    font-size: 110%;
+    font-weight: bold;
 }
 
-.display-calculated-values{
-    margin-top: -16%;
-    padding-left: 15%;
-    text-align: center;
+.earliest-start-date{
+    font-size: 110%;
+    font-weight: bold;
 }
 
-.calculate-button{
-    margin-left: 50%;
-    font-size: larger;
-    text-align: center;
+.earliest-end-date{
+    font-size: 110%;
+    font-weight: bold;
 }
-
