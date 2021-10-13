@@ -17,7 +17,15 @@
 .main-calc-title{
     font-size: 300%;
     padding-bottom: 2%;
+    margin-right: 50%;
+    margin-top: -4.6%;
     color:rgb(0, 0, 0);
+}
+
+/*Todays date*/
+.current-date{
+    font-size: 250%;
+    margin-left: 50%;
 }
 
 /*Descriptive program length and cost of program displays*/
@@ -39,6 +47,10 @@
 .inner-cost-of-program{
     font-size: 110%;
     font-weight: bold;
+}
+
+.ppf-explanation{
+margin-left: 36%;
 }
 
 /*User input boxes and sliders*/

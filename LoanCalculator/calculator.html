@@ -10,24 +10,28 @@
 <body class="main-body">
     <div class="calc-body">
         <!--User Input area-->
+        <span class="current-date">Todays date: <span id="current-date"></span></span>
         <div class="main-calc-title">Payment Calculator</div>
 
         <div class="program-length">Length of Program: <span id="inner-program-length" class="inner-program-length"></span></div>
         <div class="cost-of-program">Cost of Program: <span id="inner-cost-of-program" class="inner-cost-of-program"></span></div>
+        <a class="ppf-explanation">*This fee is waved with a down-payment over $<span id="minimum-ppf-wave-amount"></span></a>
 
         <div class="user-input-areas">
-            <div class="down-payment">Down-payment You Can Afford: <input type="number" id="down-payment-box"
-                 class="down-payment-box" min="0" max="0"> <input type="range" id="down-payment-slider" class="slider-bars" min="0" max="20000"></div>
-            <div class="monthly-payment">Monthly Amount You Can Afford: <input type="number" id="monthly-payment-box" 
-                 class="monthly-payment-box"><input type="range" id="monthly-payment-slider" class="slider-bars" min="0" max="20000"></div>
+            <div class="down-payment">Down-payment You Can Afford: <input placeholder="$" type="number" id="down-payment-box"
+                 class="down-payment-box" min="0" max="0" onchange="calcValues()"> <input type="range" id="down-payment-slider" class="slider-bars" min="0" max="0" onchange="calcValues()"></div>
+                 <a class="min-max-down-payment"></a>
+            <div class="monthly-payment">Monthly Amount You Can Afford: <input placeholder="$" type="number" id="monthly-payment-box" 
+                 class="monthly-payment-box" onchange="calcValues()"><input type="range" id="monthly-payment-slider" class="slider-bars" min="0" max="0" onchange="calcValues()"></div>
+                 <a class="min-max-monthly-payment"></a>
         </div>
 
         <div class="payment-recap">
             <div>
-                It will take you <span id="months-to-pay" class="months-to-pay">TestTestTest</span> to pay off the
+                It will take you <span id="months-to-pay" class="months-to-pay"></span> to pay off the
                 program, and if you start paying today, you can
-                begin attending classes as early as <span id="earliest-start-date" class="earliest-start-date">TestTestTest</span>
-                and finish the program in <span id="earliest-end-date" class="earliest-end-date">TestTestTest</span>
+                begin attending classes as early as <span id="earliest-start-date" class="earliest-start-date"></span>
+                and finish the program in <span id="earliest-end-date" class="earliest-end-date"></span>
             </div>
         </div>
 
