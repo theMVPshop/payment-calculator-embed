@@ -58,7 +58,7 @@ depositMin = 500;
 depositMax = programCost;
 
 monthlyAmountMin = 100;
-monthlyAmountMax = 500;
+monthlyAmountMax = 2000;
 
 userDepositBox.min = depositMin;
 userDepositBox.max = depositMax;
@@ -70,19 +70,29 @@ userMonthlyPaymentsBox.max = monthlyAmountMax;
 userMonthlyPaymentsSlider.min = monthlyAmountMin;
 userMonthlyPaymentsSlider.max = monthlyAmountMax;
 
+//Set our input box values to the middle value by default
+userDepositBox.value = depositMax / 2;
+userDepositSlider.value = depositMax / 2;
+userMonthlyPaymentsBox.value = monthlyAmountMax / 2;
+userMonthlyPaymentsSlider.value = monthlyAmountMax / 2;
+
 //Put Slider numbers into input boxes, and vice versa
 userDepositSlider.oninput = function () {
     userDepositBox.value = this.value;
+    calcValues();
 }
 userDepositBox.oninput = function () {
     userDepositSlider.value = this.value;
+    calcValues();
 }
 
 userMonthlyPaymentsSlider.oninput = function () {
     userMonthlyPaymentsBox.value = this.value;
+    calcValues();
 }
 userMonthlyPaymentsBox.oninput = function () {
     userMonthlyPaymentsSlider.value = this.value;
+    calcValues();
 }
 
 //Set dates
@@ -91,16 +101,11 @@ todaysDate.innerHTML = currentDate;
 
 function calcValues() {
 
-    //recalculate calculations to display in html
-    monthsToPayObject.innerHTML = monthsToPay + " months";
-    earlyStartDateObject.innerHTML = earlyStartDate;
-    earlyEndDateObject.innerHTML = earlyEndDate;
-
     //(tuition + ppf) - deposit = left over
     //left over / payments per month = amount of months
     programLeftOverCost = (programCost + currentPPF) - deposit;
 
-    monthsToPay = Math.trunc(programLeftOverCost / monthlyAmount);
+    monthsToPay = Math.trunc(Math.round(programLeftOverCost / monthlyAmount));
 
     //Update our data on input up
     deposit = userDepositBox.value;
@@ -119,7 +124,7 @@ function calcValues() {
     //earliest start date. If our calc is negative, class can be started now because
     //you will finish paying before the program finishes
     var weeksToPay = (monthsToPay * 4) - programLength;
-    if(weeksToPay <= 0)
+    if(weeksToPay < 0)
     {
         earlyStartDate = currentDate;
     }
@@ -127,8 +132,8 @@ function calcValues() {
     {
         //years do not progress with (months - program length)
 
-        var newDate = new Date();
-        newDate.setDate(newDate.getDate() + (monthsToPay - programLength));
+        var newDate = new Date(currentDate);
+        newDate.setDate(newDate.getDate() + (((monthsToPay * 4) - programLength)) * 7);
         var mm = newDate.getMonth() + 1;
         var yyyy = newDate.getFullYear();
         var earlyStartDateString = yyyy + "-" + mm;
@@ -136,12 +141,22 @@ function calcValues() {
         earlyStartDate = earlyStartDateString;
     }
 
-    var newDate = new Date();
-    newDate.setDate(newDate.getDate() + monthsToPay);
+    //finish program string
+    var newDate = new Date(currentDate);
+    newDate.setDate(newDate.getDate() + (monthsToPay * 4) * 7);
     var mm = newDate.getMonth() + 1;
     var yyyy = newDate.getFullYear();
     var earlyEndDateString = yyyy + "-" + mm;
 
     earlyEndDate = earlyEndDateString; 
 
+
+    //recalculate calculations to display in html
+    if(!isNaN(monthsToPay) || !isNaN(earlyStartDate) || !isNaN(earlyEndDate))
+    {
+        monthsToPayObject.innerHTML = monthsToPay + " months";
+        earlyStartDateObject.innerHTML = earlyStartDate;
+        earlyEndDateObject.innerHTML = earlyEndDate;
+    }
 }
+

@@ -1,3 +1,44 @@
+/*color bars*/
+.color-section{
+    width: 50%;
+    margin-left: 25.15%;
+    margin-top: -14.15%;
+}
+
+.color-1{
+    background-color: rgb(224, 22, 66);
+    padding-top: 3.5%;
+}
+.color-2{
+    background-color: rgb(224, 22, 22);
+    padding-top: 3.5%;
+}
+.color-3{
+    background-color: rgb(224, 39, 22);
+    padding-top: 3.5%;
+}
+.color-4{
+    background-color: rgb(224, 62, 22);
+    padding-top: 3.5%;
+}
+.color-5{
+    background-color: rgb(224, 96, 22);
+    padding-top: 3.5%;
+}
+.color-6{
+    background-color: rgb(224, 120, 22);
+    padding-top: 3.5%;
+}
+.color-7{
+    background-color: rgb(224, 177, 22);
+    padding-top: 3.5%;
+}
+.color-8{
+    background-color: rgb(224, 204, 22);
+    padding-top: 3.5%;
+}
+
+/*Calculator shell*/
 .main-body
 {
     background-color: rgb(27, 26, 26);
