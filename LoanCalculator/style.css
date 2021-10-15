@@ -1,42 +1,5 @@
-/*color bars*/
-.color-section{
-    width: 50%;
-    margin-left: 25.15%;
-    margin-top: -14.15%;
-}
 
-.color-1{
-    background-color: rgb(224, 22, 66);
-    padding-top: 3.5%;
-}
-.color-2{
-    background-color: rgb(224, 22, 22);
-    padding-top: 3.5%;
-}
-.color-3{
-    background-color: rgb(224, 39, 22);
-    padding-top: 3.5%;
-}
-.color-4{
-    background-color: rgb(224, 62, 22);
-    padding-top: 3.5%;
-}
-.color-5{
-    background-color: rgb(224, 96, 22);
-    padding-top: 3.5%;
-}
-.color-6{
-    background-color: rgb(224, 120, 22);
-    padding-top: 3.5%;
-}
-.color-7{
-    background-color: rgb(224, 177, 22);
-    padding-top: 3.5%;
-}
-.color-8{
-    background-color: rgb(224, 204, 22);
-    padding-top: 3.5%;
-}
+
 
 /*Calculator shell*/
 .main-body
@@ -49,17 +12,48 @@
     width: 50%;
     margin-left: 25%;
 
-    border-style: solid;
-    border-color: rgb(224, 22, 66);
-    background-color: rgb(223, 66, 126);
+    border: 2px solid rgb(140, 0, 255);
+    background-color: rgb(243, 243, 248);
+    border-radius: 25px;
 
     text-align: center;
 }
+/*                             SECTION 0*/
+.title{
+    background-color: rgb(253,252,254);
+    border-radius: 25px;
+    box-shadow: rgb(255, 0, 0);
+    border: 2px solid rgb(140, 0, 255);
+    
+
+    width: 80%;
+    margin-left: 10%;
+
+    padding-top: 0%;
+    padding-bottom: 0%;
+
+    margin-bottom: 1%;
+    margin-top: 1%;
+}
+
+/*                             SECTION 1*/
+.title-info{
+    background-color: rgb(253,252,254);
+    border-radius: 25px;
+    border: 2px solid rgb(140, 0, 255);
+
+    width: 70%;
+    margin-left: 15%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+
+    margin-bottom: 1%;
+}
+
 .main-calc-title{
     font-size: 300%;
-    padding-bottom: 2%;
+    padding-bottom: 0%;
     margin-right: 50%;
-    margin-top: -4.6%;
     color:rgb(0, 0, 0);
 }
 
@@ -67,6 +61,8 @@
 .current-date{
     font-size: 250%;
     margin-left: 50%;
+    margin-bottom: 1%;
+    margin-top: -5.5%;
 }
 
 /*Descriptive program length and cost of program displays*/
@@ -94,27 +90,57 @@
 margin-left: 36%;
 }
 
-/*User input boxes and sliders*/
-.user-input-areas{
+/*User input boxes and sliders    SECTION 2*/
+/*Hide arrows inside input box on all mainstream browser types (firefox, safari, edge, chrome, opera)*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  -moz-appearance: textfield;
+  margin: 0; 
+}
 
-    margin-left: 10%;
+
+.user-input-areas{
+    background-color: rgb(253,252,254);
+    border-radius: 25px;
+    border: 2px solid rgb(140, 0, 255);
+    width: 70%;
+
+    margin-left: 15%;
     padding-top: 2%;
     font-size: 100%;
+
+    padding-top: 2%;
+    padding-bottom: 2%;
+
+    margin-bottom: 1%;
 }
 
 .down-payment{
     font-size: 140%;
+    margin-bottom: 2%;
 }
 .down-payment-box{
-    width: 8%;
+    font-size: 100%;
+    width: 10%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: 2px solid rgb(140, 0, 255);
+    border-radius: 4px;
 }
 
 .monthly-payment{
-    margin-left: -1.2%;
+    margin-left: -2.1%;
     font-size: 140%;
 }
 .monthly-payment-box{
-    width: 8%;
+    font-size: 100%;
+    width: 10%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: 2px solid rgb(140, 0, 255);
+    border-radius: 4px;
+
 }
 
 .slider-bars{
@@ -130,13 +156,21 @@ margin-left: 36%;
     transition: 0.2s;
 }
 
-/*Payment recap*/
+/*Payment recap                SECTION 3*/
 .payment-recap{
+    background-color: rgb(253,252,254);
+    border-radius: 25px;
+    border: 2px solid rgb(140, 0, 255);
 
     padding-top: 2%;
     margin-left: 15%;
     width: 70%;
     font-size: 200%;
+
+    padding-top: 2%;
+    padding-bottom: 2%;
+
+    margin-bottom: 1%;
 }
 
 .months-to-pay{

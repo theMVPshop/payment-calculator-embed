@@ -77,6 +77,7 @@ userMonthlyPaymentsBox.value = monthlyAmountMax / 2;
 userMonthlyPaymentsSlider.value = monthlyAmountMax / 2;
 
 //Put Slider numbers into input boxes, and vice versa
+//Add dom update function
 userDepositSlider.oninput = function () {
     userDepositBox.value = this.value;
     calcValues();
@@ -87,6 +88,8 @@ userDepositBox.oninput = function () {
 }
 
 userMonthlyPaymentsSlider.oninput = function () {
+    console.log("updated slide value: ", this.value);
+    //monthly amount 
     userMonthlyPaymentsBox.value = this.value;
     calcValues();
 }
@@ -97,7 +100,7 @@ userMonthlyPaymentsBox.oninput = function () {
 
 //Set dates
 currentDate = date.getFullYear() + "-" + (date.getMonth() + 1);
-todaysDate.innerHTML = currentDate;
+todaysDate.innerHTML = (date.getMonth() + 1) + "-" + date.getFullYear();
 
 function calcValues() {
 
@@ -106,7 +109,7 @@ function calcValues() {
     programLeftOverCost = (programCost + currentPPF) - deposit;
 
     monthsToPay = Math.trunc(Math.round(programLeftOverCost / monthlyAmount));
-
+    console.log("user monthly payments:  ", this.value);
     //Update our data on input up
     deposit = userDepositBox.value;
     monthlyAmount = userMonthlyPaymentsBox.value;
@@ -136,7 +139,7 @@ function calcValues() {
         newDate.setDate(newDate.getDate() + (((monthsToPay * 4) - programLength)) * 7);
         var mm = newDate.getMonth() + 1;
         var yyyy = newDate.getFullYear();
-        var earlyStartDateString = yyyy + "-" + mm;
+        var earlyStartDateString =  mm + "-" + yyyy;
 
         earlyStartDate = earlyStartDateString;
     }
@@ -146,13 +149,14 @@ function calcValues() {
     newDate.setDate(newDate.getDate() + (monthsToPay * 4) * 7);
     var mm = newDate.getMonth() + 1;
     var yyyy = newDate.getFullYear();
-    var earlyEndDateString = yyyy + "-" + mm;
+    var earlyEndDateString = mm + "-" + yyyy;
 
     earlyEndDate = earlyEndDateString; 
 
 
     //recalculate calculations to display in html
-    if(!isNaN(monthsToPay) || !isNaN(earlyStartDate) || !isNaN(earlyEndDate))
+    if(!isNaN(monthsToPay) || !isNaN(earlyStartDate) || !isNaN(earlyEndDate)
+        )
     {
         monthsToPayObject.innerHTML = monthsToPay + " months";
         earlyStartDateObject.innerHTML = earlyStartDate;
