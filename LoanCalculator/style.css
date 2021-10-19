@@ -1,153 +1,55 @@
-
-
+/*#region Change Colors*/
 
 /*Calculator shell*/
-.main-body
-{
-    background-color: rgb(27, 26, 26);
+.main-body{
+    background-color: rgb(51, 50, 50);
 }
-.calc-body{
-    margin-top: 10%;
-    padding-left: 0%;
-    width: 50%;
-    margin-left: 25%;
 
+.calc-body {
     border: 2px solid rgb(140, 0, 255);
     background-color: rgb(243, 243, 248);
     border-radius: 25px;
-
-    text-align: center;
 }
 /*                             SECTION 0*/
-.title{
-    background-color: rgb(253,252,254);
+.title {
+    background-color: rgb(253, 252, 254);
     border-radius: 25px;
     box-shadow: rgb(255, 0, 0);
     border: 2px solid rgb(140, 0, 255);
-    
-
-    width: 80%;
-    margin-left: 10%;
-
-    padding-top: 0%;
-    padding-bottom: 0%;
-
-    margin-bottom: 1%;
-    margin-top: 1%;
 }
-
 /*                             SECTION 1*/
-.title-info{
-    background-color: rgb(253,252,254);
+.title-info {
+    background-color: rgb(253, 252, 254);
     border-radius: 25px;
     border: 2px solid rgb(140, 0, 255);
-
-    width: 70%;
-    margin-left: 15%;
-    padding-top: 2%;
-    padding-bottom: 2%;
-
-    margin-bottom: 1%;
 }
-
-.main-calc-title{
-    font-size: 300%;
-    padding-bottom: 0%;
-    margin-right: 50%;
-    color:rgb(0, 0, 0);
-}
-
-/*Todays date*/
-.current-date{
-    font-size: 250%;
-    margin-left: 50%;
-    margin-bottom: 1%;
-    margin-top: -5.5%;
-}
-
-/*Descriptive program length and cost of program displays*/
-.program-length{
-    font-size: 150%;
-    margin-left: -15%;
-}
-
-.inner-program-length{
-    font-size: 110%;
-    font-weight: bold;
-}
-
-.cost-of-program{
-    font-size: 150%;
-    margin-left: -17.5%;
-}
-
-.inner-cost-of-program{
-    font-size: 110%;
-    font-weight: bold;
-}
-
-.ppf-explanation{
-margin-left: 36%;
+.main-calc-title {
+    color: rgb(0, 0, 0);
 }
 
 /*User input boxes and sliders    SECTION 2*/
 /*Hide arrows inside input box on all mainstream browser types (firefox, safari, edge, chrome, opera)*/
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  -moz-appearance: textfield;
-  margin: 0; 
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    margin: 0;
 }
-
-
-.user-input-areas{
-    background-color: rgb(253,252,254);
+.user-input-areas {
+    background-color: rgb(253, 252, 254);
     border-radius: 25px;
     border: 2px solid rgb(140, 0, 255);
-    width: 70%;
-
-    margin-left: 15%;
-    padding-top: 2%;
-    font-size: 100%;
-
-    padding-top: 2%;
-    padding-bottom: 2%;
-
-    margin-bottom: 1%;
 }
-
-.down-payment{
-    font-size: 140%;
-    margin-bottom: 2%;
-}
-.down-payment-box{
-    font-size: 100%;
-    width: 10%;
-    padding-top: 1%;
-    padding-bottom: 1%;
+.down-payment-box {
     border: 2px solid rgb(140, 0, 255);
     border-radius: 4px;
 }
-
-.monthly-payment{
-    margin-left: -2.1%;
-    font-size: 140%;
-}
-.monthly-payment-box{
-    font-size: 100%;
-    width: 10%;
-    padding-top: 1%;
-    padding-bottom: 1%;
+.monthly-payment-box {
     border: 2px solid rgb(140, 0, 255);
     border-radius: 4px;
-
 }
-
-.slider-bars{
+.slider-bars {
     -webkit-appearance: none;
     appearance: none;
-    width: 35%;
-    height: 10%;
     /*Rounded Slider*/
     border-radius: 5%;
     background-color: rgba(168, 168, 168, 0.685);
@@ -155,35 +57,609 @@ input[type=number]::-webkit-outer-spin-button {
     opacity: 0.6;
     transition: 0.2s;
 }
-
 /*Payment recap                SECTION 3*/
-.payment-recap{
-    background-color: rgb(253,252,254);
+.payment-recap {
+    background-color: rgb(253, 252, 254);
     border-radius: 25px;
     border: 2px solid rgb(140, 0, 255);
+}
+/*#endregion */
 
-    padding-top: 2%;
-    margin-left: 15%;
-    width: 70%;
-    font-size: 200%;
+/*#region Desktop: Min width == 992*/
 
-    padding-top: 2%;
-    padding-bottom: 2%;
+@media(max-width: 5000px) {
 
-    margin-bottom: 1%;
+    /*Calculator shell*/
+    .calc-body {
+        margin-top: 10%;
+        padding-left: 0%;
+        width: 50%;
+        margin-left: 25%;
+        border: 2px solid rgb(140, 0, 255);
+        background-color: rgb(243, 243, 248);
+        border-radius: 25px;
+        text-align: center;
+    }
+    /*                             SECTION 0*/
+    .title {
+        background-color: rgb(253, 252, 254);
+        border-radius: 25px;
+        box-shadow: rgb(255, 0, 0);
+        border: 2px solid rgb(140, 0, 255);
+        width: 80%;
+        margin-left: 10%;
+        padding-top: 0%;
+        padding-bottom: 0%;
+        margin-bottom: 1%;
+        margin-top: 1%;
+    }
+    /*                             SECTION 1*/
+    .title-info {
+        background-color: rgb(253, 252, 254);
+        border-radius: 25px;
+        border: 2px solid rgb(140, 0, 255);
+        width: 70%;
+        margin-left: 15%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        margin-bottom: 1%;
+    }
+    .main-calc-title {
+        font-size: 300%;
+        padding-bottom: 0%;
+        margin-right: 50%;
+        color: rgb(0, 0, 0);
+    }
+    /*Todays date*/
+    .current-date {
+        font-size: 250%;
+        margin-left: 50%;
+        margin-bottom: 1%;
+        margin-top: -5.5%;
+    }
+    /*Descriptive program length and cost of program displays*/
+    .program-length {
+        font-size: 150%;
+        margin-left: -15%;
+    }
+    .inner-program-length {
+        font-size: 110%;
+        font-weight: bold;
+    }
+    .cost-of-program {
+        font-size: 150%;
+        margin-left: -17.5%;
+    }
+    .inner-cost-of-program {
+        font-size: 110%;
+        font-weight: bold;
+    }
+    .ppf-explanation {
+        margin-left: 36%;
+    }
+    /*User input boxes and sliders    SECTION 2*/
+    /*Hide arrows inside input box on all mainstream browser types (firefox, safari, edge, chrome, opera)*/
+    input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        -moz-appearance: textfield;
+        margin: 0;
+    }
+    .user-input-areas {
+        background-color: rgb(253, 252, 254);
+        border-radius: 25px;
+        border: 2px solid rgb(140, 0, 255);
+        width: 70%;
+        margin-left: 15%;
+        padding-top: 2%;
+        font-size: 100%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        margin-bottom: 1%;
+    }
+    .down-payment {
+        font-size: 140%;
+        margin-bottom: 2%;
+    }
+    .down-payment-box {
+        font-size: 100%;
+        width: 10%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        border: 2px solid rgb(140, 0, 255);
+        border-radius: 4px;
+    }
+    .monthly-payment {
+        margin-left: -2.1%;
+        font-size: 140%;
+    }
+    .monthly-payment-box {
+        font-size: 100%;
+        width: 10%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        border: 2px solid rgb(140, 0, 255);
+        border-radius: 4px;
+    }
+    .slider-bars {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 35%;
+        height: 10%;
+        /*Rounded Slider*/
+        border-radius: 5%;
+        background-color: rgba(168, 168, 168, 0.685);
+        outline: none;
+        opacity: 0.6;
+        transition: 0.2s;
+    }
+    /*Payment recap                SECTION 3*/
+    .payment-recap {
+        background-color: rgb(253, 252, 254);
+        border-radius: 25px;
+        border: 2px solid rgb(140, 0, 255);
+        padding-top: 2%;
+        margin-left: 15%;
+        width: 70%;
+        font-size: 200%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        margin-bottom: 1%;
+    }
+    .months-to-pay {
+        font-size: 110%;
+        font-weight: bold;
+    }
+    .earliest-start-date {
+        font-size: 110%;
+        font-weight: bold;
+    }
+    .earliest-end-date {
+        font-size: 110%;
+        font-weight: bold;
+    }
 }
 
-.months-to-pay{
-    font-size: 110%;
-    font-weight: bold;
+@media screen and (max-width: 1920px){
+    .main-calc-title {
+        font-size: 200%;
+    }
+    
+    /*Todays date*/
+    
+    .current-date {
+        font-size: 200%;
+    }
 }
 
-.earliest-start-date{
-    font-size: 110%;
-    font-weight: bold;
+@media screen and (max-width: 1900px){
+    .main-calc-title {
+        font-size: 150%;
+        margin-bottom: -1%;
+        margin-top: 1.5%;
+    }
+    
+    /*Todays date*/
+    
+    .current-date {
+        font-size: 150%;
+        margin-top: -3.5%;
+    }
 }
 
-.earliest-end-date{
-    font-size: 110%;
-    font-weight: bold;
+@media screen and (max-width: 1600px) {
+    .calc-body {
+        margin-top: 10%;
+        padding-left: 0%;
+        width: 50%;
+        margin-left: 25%;
+        border-radius: 25px;
+        text-align: center;
+    }
+    /*                             SECTION 0*/
+    .title {
+        width: 80%;
+        margin-left: 10%;
+        padding-top: 0%;
+        padding-bottom: 0%;
+        margin-bottom: 1%;
+        margin-top: 1%;
+    }
+    /*                             SECTION 1*/
+    .title-info {
+        width: 70%;
+        margin-left: 15%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        margin-bottom: 1%;
+    }
+    .main-calc-title {
+        font-size: 150%;
+        margin-bottom: -1%;
+        margin-top: 1.5%;
+    }
+    /*Todays date*/
+    .current-date {
+        font-size: 150%;
+        margin-top: -3.5%;
+    }
+    /*Descriptive program length and cost of program displays*/
+    .program-length {
+        font-size: 140%;
+        margin-left: -15%;
+    }
+    .inner-program-length {
+        font-size: 100%;
+        font-weight: bold;
+    }
+    .cost-of-program {
+        font-size: 140%;
+        margin-left: -17.5%;
+    }
+    .inner-cost-of-program {
+        font-size: 100%;
+        font-weight: bold;
+    }
+
+    .ppf-explanation {
+        font-size: 90%;
+    }
+    /*User input boxes and sliders    SECTION 2*/
+    /*Hide arrows inside input box on all mainstream browser types (firefox, safari, edge, chrome, opera)*/
+    .user-input-areas {
+
+        font-size: 75%;
+    }
+    .down-payment {
+        font-size: 140%;
+    }
+    .down-payment-box {
+        font-size: 75%;
+        width: 7%;
+    }
+    .monthly-payment {
+        font-size: 140%;
+    }
+    .monthly-payment-box {
+        font-size: 75%;
+        width: 7%;
+    }
+    .slider-bars {
+        width: 35%;
+        height: 10%;
+    }
+    /*Payment recap                SECTION 3*/
+    .payment-recap {
+        font-size: 150%;
+    }
+    .months-to-pay {
+        font-size: 100%;
+    }
+    .earliest-start-date {
+        font-size: 100%;
+    }
+    .earliest-end-date {
+        font-size: 100%;
+    }
 }
+
+@media screen and (max-width: 1366px) {
+    /*                             SECTION 1*/
+    .main-calc-title {
+        font-size: 120%;
+    }
+    /*Todays date*/
+    .current-date {
+        font-size: 120%;
+        margin-top: -6%;
+    }
+    /*Descriptive program length and cost of program displays*/
+    .program-length {
+        font-size: 120%;
+    }
+    .inner-program-length {
+        font-size: 100%;
+        font-weight: bold;
+    }
+    .cost-of-program {
+        font-size: 120%;
+    }
+    .inner-cost-of-program {
+        font-size: 100%;
+        font-weight: bold;
+    }
+
+    .ppf-explanation {
+        font-size: 75%;
+        margin-left: 1%;
+    }
+    /*User input boxes and sliders    SECTION 2*/
+    /*Hide arrows inside input box on all mainstream browser types (firefox, safari, edge, chrome, opera)*/
+    .user-input-areas {
+
+        font-size: 75%;
+    }
+    .down-payment {
+        font-size: 120%;
+    }
+    .down-payment-box {
+        font-size: 75%;
+        width: 7%;
+    }
+    .monthly-payment {
+        font-size: 120%;
+    }
+    .monthly-payment-box {
+        font-size: 75%;
+        width: 7%;
+    }
+    .slider-bars {
+        width: 25%;
+        height: 10%;
+    }
+    /*Payment recap                SECTION 3*/
+    .payment-recap {
+        font-size: 100%;
+    }
+    .months-to-pay {
+        font-size: 100%;
+    }
+    .earliest-start-date {
+        font-size: 100%;
+    }
+    .earliest-end-date {
+        font-size: 100%;
+    }
+}
+
+/*#endregion Desktop Style*/
+
+/*#region Large Tablet: Max width == 991px*/
+
+@media screen and (max-width: 911px) {
+    /*                             SECTION 1*/
+    .main-calc-title {
+        font-size: 100%;
+    }
+    /*Todays date*/
+    .current-date {
+        font-size: 100%;
+        margin-top: -5.5%;
+    }
+    /*Descriptive program length and cost of program displays*/
+    .program-length {
+        font-size: 100%;
+        margin-left: 1%;
+    }
+    .inner-program-length {
+        font-size: 100%;
+        font-weight: bold;
+    }
+    .cost-of-program {
+        font-size: 100%;
+        margin-left: 1%;
+    }
+    .inner-cost-of-program {
+        font-size: 100%;
+        font-weight: bold;
+    }
+    .ppf-explanation {
+        font-size: 60%;
+        margin-left: 1%;
+    }
+    /*User input boxes and sliders    SECTION 2*/
+    /*Hide arrows inside input box on all mainstream browser types (firefox, safari, edge, chrome, opera)*/
+    .down-payment-box {
+        font-size: 65%;
+        width: 8%;
+    }
+    .monthly-payment {
+        font-size: 120%;
+    }
+    .monthly-payment-box {
+        font-size: 65%;
+        width: 8%;
+    }
+    .slider-bars {
+        width: 60%;
+        height: 5%;
+    }
+    /*Payment recap                SECTION 3*/
+    .payment-recap {
+        font-size: 75%;
+        border-radius: 15px;
+    }
+}
+
+/*#endregion Tablet*/
+
+/*#region Medium Tablet/Large Phone: Max width == 767px*/
+
+@media screen and (max-width: 767px) {
+    /*                             SECTION 1*/
+    .main-calc-title {
+        font-size: 60%;
+    }
+    /*Todays date*/
+    .current-date {
+        font-size: 60%;
+        margin-top: -5.5%;
+    }
+
+    .title-info{
+        border-radius: 15px;
+    }
+    /*Descriptive program length and cost of program displays*/
+    .program-length {
+        font-size: 80%;
+        margin-left: 1%;
+    }
+    .inner-program-length {
+        font-size: 100%;
+        font-weight: bold;
+    }
+    .cost-of-program {
+        font-size: 65%;
+        margin-left: 1%;
+    }
+    .inner-cost-of-program {
+        font-size: 100%;
+        font-weight: bold;
+    }
+    .ppf-explanation {
+        font-size: 45%;
+        margin-left: 1%;
+    }
+    /*User input boxes and sliders    SECTION 2*/
+    /*Hide arrows inside input box on all mainstream browser types (firefox, safari, edge, chrome, opera)*/
+    .user-input-areas{
+        border-radius: 15px;
+    }
+    .down-payment {
+        font-size: 80%;
+    }
+    .down-payment-box {
+        font-size: 65%;
+        border-width: 1px;
+    }
+    .monthly-payment {
+        font-size: 80%;
+    }
+    .monthly-payment-box {
+        font-size: 65%;
+        border-width: 1px;
+    }
+    .slider-bars {
+        width: 80%;
+        height: 5%;
+    }
+    /*Payment recap                SECTION 3*/
+    .payment-recap {
+        font-size: 60%;
+        border-radius: 15px;
+    }
+}
+
+
+/*#endregion Tablet*/
+
+/*#region Phone: Max width == 479px*/
+
+@media screen and (max-width: 479px) {
+    .calc-body {
+        margin-top: 10%;
+        padding-left: 0%;
+        width: 50%;
+        margin-left: 25%;
+        border-radius: 25px;
+        text-align: center;
+    }
+    /*                             SECTION 0*/
+    .title {
+        width: 80%;
+        margin-left: 10%;
+        padding-top: 0%;
+        padding-bottom: 0%;
+        margin-bottom: 1%;
+        margin-top: 1%;
+    }
+    /*                             SECTION 1*/
+    .title-info {
+        width: 70%;
+        margin-left: 15%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        margin-bottom: 1%;
+    }
+    .main-calc-title {
+        font-size: 300%;
+        padding-bottom: 0%;
+        margin-right: 50%;
+    }
+    /*Todays date*/
+    .current-date {
+        font-size: 250%;
+        margin-left: 50%;
+        margin-bottom: 1%;
+        margin-top: -5.5%;
+    }
+    /*Descriptive program length and cost of program displays*/
+    .program-length {
+        font-size: 150%;
+        margin-left: -15%;
+    }
+    .inner-program-length {
+        font-size: 110%;
+        font-weight: bold;
+    }
+    .cost-of-program {
+        font-size: 150%;
+        margin-left: -17.5%;
+    }
+    .inner-cost-of-program {
+        font-size: 110%;
+        font-weight: bold;
+    }
+    .ppf-explanation {
+        margin-left: 36%;
+    }
+    /*User input boxes and sliders    SECTION 2*/
+    /*Hide arrows inside input box on all mainstream browser types (firefox, safari, edge, chrome, opera)*/
+    .user-input-areas {
+        width: 70%;
+        margin-left: 15%;
+        padding-top: 2%;
+        font-size: 100%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        margin-bottom: 1%;
+    }
+    .down-payment {
+        font-size: 140%;
+        margin-bottom: 2%;
+    }
+    .down-payment-box {
+        font-size: 100%;
+        width: 10%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        border-radius: 4px;
+    }
+    .monthly-payment {
+        margin-left: -2.1%;
+        font-size: 140%;
+    }
+    .monthly-payment-box {
+        font-size: 100%;
+        width: 10%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+    }
+    .slider-bars {
+        width: 35%;
+        height: 10%;
+    }
+    /*Payment recap                SECTION 3*/
+    .payment-recap {
+        padding-top: 2%;
+        margin-left: 15%;
+        width: 70%;
+        font-size: 200%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        margin-bottom: 1%;
+    }
+    .months-to-pay {
+        font-size: 110%;
+        font-weight: bold;
+    }
+    .earliest-start-date {
+        font-size: 110%;
+        font-weight: bold;
+    }
+    .earliest-end-date {
+        font-size: 110%;
+        font-weight: bold;
+    }
+}
+
+/*#endregion Phone*/

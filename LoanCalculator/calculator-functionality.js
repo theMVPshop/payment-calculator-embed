@@ -129,7 +129,7 @@ function calcValues() {
     var weeksToPay = (monthsToPay * 4) - programLength;
     if(weeksToPay < 0)
     {
-        earlyStartDate = currentDate;
+        earlyStartDate = (date.getMonth() + 1) + "-" + date.getFullYear();
     }
     else
     {
