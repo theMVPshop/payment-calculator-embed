@@ -1,38 +1,69 @@
+/*#region Color Variables*/
+:root{
+
+    /*#region Stylistic Colors */
+    
+    --mainBackground: rgb(51, 50, 50);
+    /*var(--mainBackground)*/
+    --boxShadowingColor: rgb(0, 38, 255);
+    /*var(--boxShadowingColor)*/
+    --elementBorderColor: rgb(0, 38, 255);
+    /*var(--elementBorderColor)*/
+    --backgroundColor: rgb(243, 243, 248);
+    /*var(--backgroundColor)*/
+    --sliderBarColor: rgba(168, 168, 168, 0.685);
+    /*var(--sliderBarColor)*/
+    --sliderThumbColor: rgb(0, 38, 255);
+    /*var(--sliderThumbColor)*/
+
+    /*#endregion */
+
+    /*#region Fonts, and Font Colors */
+
+    --globalFont: Arial, Helvetica, sans-serif;
+    /*var(--globalFont)*/
+
+    --fontColor: rgb(204, 0, 0);
+    /*var(--fontColor)*/
+
+    /*#endregion*/
+}
+/*#endregion */
+
 /*#region Change Styles*/
 
 /*Calculator shell*/
 
 .main-body {
     
-    background-color: rgb(51, 50, 50);
+    background-color: var(--mainBackground);
 }
 
 .calc-body {
-    font-family: Arial, Helvetica, sans-serif;
-    border: 2px solid rgb(140, 0, 255);
-    background-color: rgb(243, 243, 248);
+    font-family: var(--globalFont);
+    color: var(--fontColor);
+    border: 2px solid var(--elementBorderColor);
+    background-color: var(--backgroundColor);
     border-radius: 25px;
+    box-shadow: 0 0px 25px var(--boxShadowingColor);
 }
 
 /*                             SECTION 0*/
 
 .title {
-    background-color: rgb(253, 252, 254);
+    background-color: var(--backgroundColor);
     border-radius: 25px;
-    box-shadow: rgb(255, 0, 0);
-    border: 2px solid rgb(140, 0, 255);
+    border: 2px solid var(--elementBorderColor);
+    box-shadow: 0 0px 10px var(--boxShadowingColor);
 }
 
 /*                             SECTION 1*/
 
 .title-info {
-    background-color: rgb(253, 252, 254);
+    background-color: var(--backgroundColor);
     border-radius: 25px;
-    border: 2px solid rgb(140, 0, 255);
-}
-
-.main-calc-title {
-    color: rgb(0, 0, 0);
+    border: 2px solid var(--elementBorderColor);
+    box-shadow: 0 0px 10px var(--boxShadowingColor);
 }
 
 /*User input boxes and sliders    SECTION 2*/
@@ -46,19 +77,22 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 }
 
 .user-input-areas {
-    background-color: rgb(253, 252, 254);
+    background-color: var(--backgroundColor);
     border-radius: 25px;
-    border: 2px solid rgb(140, 0, 255);
+    border: 2px solid var(--elementBorderColor);
+    box-shadow: 0 0px 10px var(--boxShadowingColor);
 }
 
 .down-payment-box {
-    border: 2px solid rgb(140, 0, 255);
+    border: 2px solid var(--elementBorderColor);
     border-radius: 4px;
+    color: var(--fontColor);
 }
 
 .monthly-payment-box {
-    border: 2px solid rgb(140, 0, 255);
+    border: 2px solid var(--elementBorderColor);
     border-radius: 4px;
+    color: var(--fontColor);
 }
 
 .slider-bars {
@@ -66,7 +100,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     appearance: none;
     /*Rounded Slider*/
     border-radius: 5%;
-    background-color: rgba(168, 168, 168, 0.685);
+    background-color: var(--sliderBarColor);
     outline: none;
     opacity: 0.6;
     transition: 0.2s;
@@ -74,19 +108,17 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
 .slider-bars::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    background: rgb(140, 0, 255);
+    background: var(--sliderThumbColor);
     cursor: pointer;
-
-    height: 10px;
-    width: 10px;
 }
 
 /*Payment recap                SECTION 3*/
 
 .payment-recap {
-    background-color: rgb(253, 252, 254);
+    background-color: var(--backgroundColor);
     border-radius: 25px;
-    border: 2px solid rgb(140, 0, 255);
+    border: 2px solid var(--elementBorderColor);
+    box-shadow: 0 0px 10px var(--boxShadowingColor);
 }
 
 /*#endregion */
@@ -100,17 +132,12 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
         padding-left: 0%;
         width: 50%;
         margin-left: 25%;
-        border: 2px solid rgb(140, 0, 255);
-        background-color: rgb(243, 243, 248);
         border-radius: 25px;
         text-align: center;
     }
     /*                             SECTION 0*/
     .title {
-        background-color: rgb(253, 252, 254);
         border-radius: 25px;
-        box-shadow: rgb(255, 0, 0);
-        border: 2px solid rgb(140, 0, 255);
         width: 80%;
         margin-left: 10%;
         padding-top: 0%;
@@ -120,9 +147,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     }
     /*                             SECTION 1*/
     .title-info {
-        background-color: rgb(253, 252, 254);
         border-radius: 25px;
-        border: 2px solid rgb(140, 0, 255);
         width: 70%;
         margin-left: 15%;
         padding-top: 2%;
@@ -133,7 +158,6 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
         font-size: 300%;
         padding-bottom: 0%;
         margin-right: 50%;
-        color: rgb(0, 0, 0);
     }
     /*Todays date*/
     .current-date {
@@ -170,9 +194,7 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
         margin: 0;
     }
     .user-input-areas {
-        background-color: rgb(253, 252, 254);
         border-radius: 25px;
-        border: 2px solid rgb(140, 0, 255);
         width: 70%;
         margin-left: 15%;
         padding-top: 2%;
@@ -190,7 +212,6 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
         width: 10%;
         padding-top: 1%;
         padding-bottom: 1%;
-        border: 2px solid rgb(140, 0, 255);
         border-radius: 4px;
     }
     .monthly-payment {
@@ -202,26 +223,28 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
         width: 10%;
         padding-top: 1%;
         padding-bottom: 1%;
-        border: 2px solid rgb(140, 0, 255);
         border-radius: 4px;
     }
     .slider-bars {
-        -webkit-appearance: none;
-        appearance: none;
         width: 35%;
-        height: 10%;
+        height: 15%;
         /*Rounded Slider*/
         border-radius: 5%;
-        background-color: rgba(168, 168, 168, 0.685);
-        outline: none;
-        opacity: 0.6;
-        transition: 0.2s;
     }
+    .slider-bars::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+
+        cursor: pointer;
+
+        height: 15px;
+        width: 15px;
+    }
+
+    
     /*Payment recap                SECTION 3*/
     .payment-recap {
-        background-color: rgb(253, 252, 254);
         border-radius: 25px;
-        border: 2px solid rgb(140, 0, 255);
         padding-top: 2%;
         margin-left: 15%;
         width: 70%;
@@ -412,8 +435,11 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
         width: 7%;
     }
     .slider-bars {
-        width: 25%;
-        height: 10%;
+        width: 50%;
+    }
+    .slider-bars::-webkit-slider-thumb {
+        height: 10px;
+        width: 10px;
     }
     /*Payment recap                SECTION 3*/
     .payment-recap {
